@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "projects": {
+    "go-shule": "apps/go-shule"
+  }
+}

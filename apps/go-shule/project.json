@@ -1,0 +1,52 @@
+{
+  "root": "apps/go-shule",
+  "sourceRoot": "apps/go-shule/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/go-shule",
+        "main": "apps/go-shule/src/main.ts",
+        "tsConfig": "apps/go-shule/tsconfig.app.json",
+        "assets": ["apps/go-shule/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/go-shule/src/environments/environment.ts",
+              "with": "apps/go-shule/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "go-shule:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/go-shule/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/go-shule"],
+      "options": {
+        "jestConfig": "apps/go-shule/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
