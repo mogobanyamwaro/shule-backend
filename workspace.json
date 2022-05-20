@@ -1,6 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "backend-core": "libs/backend/core",
+    "backend-entities": "libs/backend/entities",
+    "backend-school": "libs/backend/school",
+    "backend-shared": "libs/backend/shared",
     "go-shule": "apps/go-shule"
   }
 }

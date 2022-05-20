@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@go-shule-backend/backend/core": ["libs/backend/core/src/index.ts"],
+      "@go-shule-backend/backend/entities": [
+        "libs/backend/entities/src/index.ts"
+      ],
+      "@go-shule-backend/backend/school": ["libs/backend/school/src/index.ts"],
+      "@go-shule-backend/backend/shared": ["libs/backend/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
